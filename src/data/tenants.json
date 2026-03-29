@@ -1,0 +1,29 @@
+{
+  "_comment": "Placeholder data for Phase 2 - Tenants catalog",
+  "tenants": [
+    {
+      "id": 1,
+      "slug": "example-company",
+      "name": "Пример Компании",
+      "category": "IT",
+      "description": "Описание компании",
+      "phone": "+7 (XXX) XXX-XX-XX",
+      "email": "info@example.ru",
+      "website": "https://example.ru",
+      "floor": 1,
+      "office": "101"
+    }
+  ],
+  "categories": [
+    "IT",
+    "Юридические услуги",
+    "Медицина",
+    "Образование",
+    "Красота и здоровье",
+    "Финансы",
+    "Консалтинг",
+    "Творческие студии",
+    "Торговля",
+    "Другое"
+  ]
+}

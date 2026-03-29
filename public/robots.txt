@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://delovoy-park.ru/sitemap.xml
+
+# Block irrelevant crawlers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
