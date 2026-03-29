@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        
+        .cyber-glow { 
+            box-shadow: 0 0 20px rgba(92, 21, 11, 0.15); 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .cyber-glow-enhanced {
+            box-shadow: 0 0 35px rgba(92, 21, 11, 0.4), 0 0 10px rgba(22, 52, 45, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .glass-panel { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+        @keyframes neon-pulse {
+            0%, 100% { text-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+            50% { text-shadow: 0 0 12px rgba(173, 206, 195, 0.4); }
+        }
+        .animate-neon-pulse {
+            animation: neon-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes slow-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .slow-zoom-bg {
+            animation: slow-zoom 20s linear infinite alternate;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes button-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(22, 52, 45, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(22, 52, 45, 0.6); }
+        }
+        .btn-pulse {
+            animation: button-glow 4s infinite;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#7c5730",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "primary-container": "#2d4b43",
+              "on-tertiary-fixed-variant": "#7c2c20",
+              "on-surface-variant": "#414846",
+              "on-background": "#1b1c1c",
+              "secondary-container": "#fdcb9b",
+              "surface-container-low": "#f6f3f2",
+              "on-secondary-fixed": "#2c1600",
+              "primary-fixed": "#c8eadf",
+              "primary-fixed-dim": "#adcec3",
+              "surface-container-highest": "#e4e2e1",
+              "inverse-on-surface": "#f3f0ef",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#99bab0",
+              "secondary-fixed": "#ffdcbd",
+              "surface-container-high": "#eae7e7",
+              "outline-variant": "#c1c8c4",
+              "on-surface": "#1b1c1c",
+              "on-tertiary-container": "#ff9784",
+              "tertiary-container": "#7a2b1f",
+              "background": "#fcf9f8",
+              "error": "#ba1a1a",
+              "primary": "#16342d",
+              "secondary-fixed-dim": "#eebd8e",
+              "inverse-primary": "#adcec3",
+              "inverse-surface": "#303030",
+              "on-secondary-container": "#79542d",
+              "outline": "#717976",
+              "surface-tint": "#46645c",
+              "surface-dim": "#dcd9d9",
+              "surface": "#fcf9f8",
+              "surface-variant": "#e4e2e1",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb4a7",
+              "on-tertiary-fixed": "#400200",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#2e4c44",
+              "tertiary-fixed": "#ffdad4",
+              "surface-bright": "#fcf9f8",
+              "tertiary": "#5c150b",
+              "on-primary-fixed": "#01201a",
+              "surface-container": "#f0eded",
+              "on-secondary-fixed-variant": "#61401b"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif tracking-tight text-zinc-900 dark:text-zinc-100">Деловой</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">О нас</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">Лист ожидания</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">Беседки</a>
+<a class="text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-800 dark:border-emerald-500 pb-1" href="#">PS Парк</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">Контакты</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-label uppercase tracking-widest text-secondary">Рейтинг Яндекс 5.0</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Логотип бизнес-парка" data-alt="minimalist logo of a modern architectural business park building on a clean light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj1s7tYSPiGtDGf0At252kRDfe6q6JaXyPSmiEGWAvtfxd5Zjaheq_1dMOfnnlURejV9mPNCDiIhYZIZPBX8YFZ8CHKKVPrnTdXtqY3xfYLbs1RWDTMIleS25e3p9NgOOWxWm3LoMJUn-D5YXwCV9wgVNnWP59DAl6pIPubC-Zpeeki_4AmLbuKUjcTKGE5pvTaDmgG6lXWBErjbsyzOl2IqkZTJ1pV8QwJrjPhumCrEOBlog6TqGDoFjYSBiNHL6aYjsVg4pX_-0"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-12 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-16 scroll-reveal">
+<div class="relative rounded-xl overflow-hidden min-h-[716px] flex items-end p-8 md:p-16">
+<div class="absolute inset-0 z-0">
+<img alt="Атмосфера PS Парка" class="w-full h-full object-cover slow-zoom-bg" data-alt="moody lounge interior with neon purple and blue lighting, plush grey sofas, ps5 controllers on table, and subtle steam from a teapot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAulFjdktQfbM6Y5XMiduYCmTCMHpoY0d8l7Vae6r6bRrvifLe_gb9ZZoxwIQn_5ZEgIKN8D919pRB4vO6h6mKAc9F6WgpeODqYwaAt6Z9oJjcCg-5NIo7zMxV0I38Dv031y1ph86m-LVQVf_fFthHSVEpbr3AGzn01lgEg8Q-yyuAxkFApFu2a71taMixlSOcmk_XSKxzF-CrM23ZzvkbLyeCSx6wxI6ml2qglLOptm8DWnbJbozfstM5ntYmQvWjXPRW9FpY4Xf0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-3 py-1 bg-tertiary text-on-tertiary text-xs font-label tracking-widest uppercase mb-4 rounded-sm animate-neon-pulse">Cyber-Loft Experience</span>
+<h1 class="text-4xl md:text-7xl font-serif text-white leading-tight mb-6 animate-neon-pulse">PS Парк — перезагрузка после рабочего дня</h1>
+<p class="text-lg text-zinc-300 font-body max-w-lg mb-8">Забудьте о дедлайнах. Погрузитесь в атмосферу технологичного уюта, где промышленный дизайн встречается с неоновой эстетикой и теплом чайной традиции.</p>
+</div>
+</div>
+</section>
+<!-- Service Cards Bento Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-4 group bg-surface-container-low p-8 rounded-xl flex flex-col justify-between hover:bg-surface-container-lowest transition-all duration-300 cyber-glow cyber-glow-enhanced">
+<div>
+<div class="mb-6 text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="timer">timer</span>
+</div>
+<h3 class="text-2xl font-serif mb-4">Аренда зоны на час</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Персональное пространство с PS5, 4K экраном и аудиосистемой Hi-Fi. Идеально для быстрого перерыва.</p>
+</div>
+<div class="text-xl font-headline text-secondary">800 ₽ / час</div>
+</div>
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl min-h-[400px] flex flex-col justify-end p-8 text-white cyber-glow cyber-glow-enhanced">
+<div class="absolute inset-0 z-0">
+<img alt="PS5 и чай" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close up of a modern clay teapot with rising steam next to a white ps5 dualsense controller on a dark textured wood table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKT4948g6sZsBNeU2-CfRNNhX6GuHuEiHk2AKSw-mecVB-FDq5Uy0mB2bK9CloPVe4vV-S1u8eMZIlvo8M9A10wuxVz1vNY4hfRL3TgdX3fzVQlM00Hatf_UE3lDa9un30AHEWkKZWk9hLG0wQr8kRu_v3QTr8SvNTblWM9_OTnfjWY1_YqsKtYVHkg_7MuuErhgpOjxMkkSnoq1w1aey9YZKK4aGKRoSjDEVuI2eN56gjspXzmrKvMSJCmPu38lLgFgEcnPD9NdM"/>
+<div class="absolute inset-0 bg-gradient-to-r from-tertiary/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-md">
+<h3 class="text-3xl font-serif mb-4">Пакет: PS5 + Чайная церемония</h3>
+<p class="text-zinc-200 text-sm mb-6">Двухчасовой сеанс медитативного гейминга с премиальным набором китайского чая (Габа или Да Хун Пао) и мягким паром.</p>
+<div class="text-2xl font-headline animate-neon-pulse">2 500 ₽</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking & Identity Contrast Section -->
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 scroll-reveal">
+<div class="order-2 lg:order-1">
+<div class="bg-surface-container-high p-10 rounded-xl shadow-sm border border-outline/10">
+<h2 class="text-3xl font-serif mb-8 text-primary animate-neon-pulse">Забронировать слот</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Дата</label>
+<input class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/20 focus:ring-0 focus:border-primary transition-all p-3" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Время</label>
+<input class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/20 focus:ring-0 focus:border-primary transition-all p-3" type="time"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-wider text-outline">Количество гостей</label>
+<select class="w-full bg-surface-container-highest border-0 border-b-2 border-outline/20 focus:ring-0 focus:border-primary transition-all p-3">
+<option>1 человек</option>
+<option>2 человека</option>
+<option>4 человека (VIP)</option>
+</select>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label uppercase tracking-widest text-sm hover:opacity-90 active:scale-95 transition-all rounded-sm mt-4 btn-pulse">
+                        Занять джойстик
+                    </button>
+</form>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<div class="inline-block p-4 border-l-4 border-secondary bg-surface-container-low cyber-glow">
+<p class="font-serif italic text-xl text-on-surface-variant leading-relaxed">
+                    "Мы создали пространство, где холодная дисциплина бизнеса растворяется в теплом неоновом свете и глубоких ароматах чая."
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Бизнес-атмосфера" class="w-full h-full object-cover" data-alt="minimalist corporate glass office interior with clean lines and bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgBXSwG4NaaOK6t80RcnLdckvTos1zsN2mVy1XQ5Mcz6iQrCrx886A4rLrBDQYL9mJ-g77hLHnsyydcjX0edQH9SUU0pvCvoHVJw6vF04f0I5C_9y22jeEpqOT1KWzTU67JKwynUfckRV_R9W880jcoxjduWcQ1EAWgB9ZXRzhD6FH5pj_DTSzKu5ZSQ9HEifdeZhBPKPcraNxshcTsMfFcFGq0Hv_kfDGtM5PK1F1h8eOcYVLKzJlnt_thLNvUu53crYp6SmS2II"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden ring-4 ring-tertiary/20 hover:ring-tertiary/40 transition-all duration-500">
+<img alt="Кибер-атмосфера" class="w-full h-full object-cover" data-alt="vibrant close up of dual ps5 controllers glowing in dark blue and pink neon light with soft bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-VDIVwWNmU44gY3MsfZy0uXTSEh1OKp437xQioCQDwnWihXFcQ64Wnomr5frv1JVAriutA2PIBSkb7PxF1FPntG0YHX2xGGrxhWsmbrW4wtgdBy2KGqOxdWAUlm_RRGM-dLdPlIvC8Mq7Z2TXKOIDs79Ne51yX5rxMYhT7sah0ifp-pRK6dvdp5XZjvp3UHmmKrVMS_aQhZYLjKMJECEESCqgpwvj6TCI2Y9IENqFAEGUTrbL9grbyfAoZ9B8u1ZyjvCEfZTtznI"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Floating Support) -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-center">
+<div class="group relative flex flex-col items-center">
+<div class="absolute bottom-20 right-0 bg-emerald-900 text-white p-4 rounded-xl shadow-2xl w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<p class="text-xs font-bold">Поддержка</p>
+<p class="text-[10px] text-emerald-100">Отвечаем за 1 минуту</p>
+<div class="mt-2 text-[10px] font-bold uppercase tracking-wider text-secondary-container">Написать нам</div>
+</div>
+<button class="bg-emerald-900 dark:bg-emerald-800 text-white rounded-full p-4 shadow-[0_12px_40px_rgba(27,28,28,0.15)] hover:scale-110 hover:brightness-110 transition-transform flex items-center justify-center btn-pulse">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
+<div class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-serif text-xl mb-4 text-zinc-900 dark:text-zinc-100">Деловой</div>
+<p class="text-zinc-500 dark:text-zinc-500 text-xs leading-relaxed">
+                © 2024 Бизнес-парк Деловой. Индустриальная элегантность.
+            </p>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-primary mb-4">Навигация</h4>
+<div class="flex flex-col space-y-2">
+<a class="text-zinc-500 dark:text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors text-sm" href="#">Политика конфиденциальности</a>
+<a class="text-zinc-500 dark:text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors text-sm" href="#">Условия использования</a>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-primary mb-4">Посетите нас</h4>
+<div class="flex flex-col space-y-2">
+<a class="text-zinc-500 dark:text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors text-sm" href="#">Правила парка</a>
+<a class="text-zinc-500 dark:text-zinc-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors text-sm" href="#">Карта проезда</a>
+</div>
+</div>
+<div class="flex flex-col items-start md:items-end justify-between">
+<div class="text-emerald-800 dark:text-emerald-400 font-bold text-sm">Активно: PS Парк</div>
+<div class="w-32 h-16 opacity-30">
+<img alt="Превью карты" data-alt="minimalist architectural floor plan drawing on recycled paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR6ZVapkn6s0JliK4wjener9npVZp3oQzKUfORsTTyTvx8i6WD8kVz_sF2FF8KPz_-ok5nDHONPYpfCV3wrq61qnWV1RmwY-kSaHZrS0q8kU0_yBQSMTXhEQC8HaID7x0WHhUwJ5yoUlzfOTdqihhxwbHW4U-rNtpU3YuDBcHe8xRcimFZXtLryOE6ISxLp75YUo2G6RUopCR-z4BgXq-9SUcd5VoykMEwHpDcF4_f8gGmg5SawWdGavo6IBn7VNMAFDHx1zfouLo"/>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    });
+</script>
+</body></html>

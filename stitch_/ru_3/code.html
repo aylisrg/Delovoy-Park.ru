@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Бизнес-парк Деловой - Беседки</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#7c5730",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "primary-container": "#2d4b43",
+              "on-tertiary-fixed-variant": "#7c2c20",
+              "on-surface-variant": "#414846",
+              "on-background": "#1b1c1c",
+              "secondary-container": "#fdcb9b",
+              "surface-container-low": "#f6f3f2",
+              "on-secondary-fixed": "#2c1600",
+              "primary-fixed": "#c8eadf",
+              "primary-fixed-dim": "#adcec3",
+              "surface-container-highest": "#e4e2e1",
+              "inverse-on-surface": "#f3f0ef",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#99bab0",
+              "secondary-fixed": "#ffdcbd",
+              "surface-container-high": "#eae7e7",
+              "outline-variant": "#c1c8c4",
+              "on-surface": "#1b1c1c",
+              "on-tertiary-container": "#ff9784",
+              "tertiary-container": "#7a2b1f",
+              "background": "#fcf9f8",
+              "error": "#ba1a1a",
+              "primary": "#16342d",
+              "secondary-fixed-dim": "#eebd8e",
+              "inverse-primary": "#adcec3",
+              "inverse-surface": "#303030",
+              "on-secondary-container": "#79542d",
+              "outline": "#717976",
+              "surface-tint": "#46645c",
+              "surface-dim": "#dcd9d9",
+              "surface": "#fcf9f8",
+              "surface-variant": "#e4e2e1",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#ffb4a7",
+              "on-tertiary-fixed": "#400200",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#2e4c44",
+              "tertiary-fixed": "#ffdad4",
+              "surface-bright": "#fcf9f8",
+              "tertiary": "#5c150b",
+              "on-primary-fixed": "#01201a",
+              "surface-container": "#f0eded",
+              "on-secondary-fixed-variant": "#61401b"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      @keyframes reveal {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .scroll-reveal {
+        opacity: 0;
+      }
+      .scroll-reveal.active {
+        animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Manrope', sans-serif; }
+      h1, h2, h3 { font-family: 'Newsreader', serif; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      .calendar-slide-container {
+        overflow: hidden;
+        position: relative;
+      }
+      .calendar-grid-transition {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif tracking-tight text-zinc-900 dark:text-zinc-100">Деловой</div>
+<div class="hidden md:flex items-center space-x-8 font-label text-sm uppercase tracking-widest">
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">О нас</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">Лист ожидания</a>
+<a class="text-emerald-900 dark:text-emerald-400 border-b-2 border-emerald-800 dark:border-emerald-500 pb-1" href="#">Беседки</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">PS Парк</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors" href="#">Контакты</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden lg:block text-xs font-label text-secondary uppercase tracking-tighter">Рейтинг Яндекса 5.0</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="Логотип Бизнес-парка" data-alt="minimalist architectural logo of a business park with clean lines and a modern professional feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf4qmeD6BBvr5keYlOB2166NdahJYFBVFj1PA_LDOZGqLYBDx8q7tBamrFKI1M3DEmDGiBfoAXJLrkQk3kK2YgdK8hzg7v0HmsoXxOT3G7Lt5yk3_FSD8dyutyBRh0sW9dH0Cmckb0G6LSGVvydQRi0vMyere0ZH-bi2UGw7RcxzAsRoIwCTT9mx09QY91V3vd0IGnjZRNfHLB34iTvUmTeYRpHBEGeKTjSSYUO8_X6QLxVeP1str6ZFHxx8NRShQ_Mxawz2WYXLM"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 max-w-7xl mx-auto px-6 lg:px-8">
+<!-- Hero Section -->
+<header class="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-7">
+<h1 class="text-6xl lg:text-8xl leading-tight text-primary mb-6">Лесной уют в <br/><span class="italic font-light">центре событий.</span></h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                Премиальные отапливаемые беседки в Бизнес-парке Деловой. Идеальное пространство для деловых встреч или тихого отдыха в окружении вековых деревьев.
+            </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] w-full overflow-hidden rounded-xl shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="luxury modern wooden gazebo in a snowy forest at night with warm interior lighting and soft amber glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpmjA3jXM2x0_-PZBgnsYxY0X2dXwZcqU4I1ytPu5lmsamplWKqDPP7mNyaVWb2FyiP9NCvqkGgfMM_gCjbTgfj9Q1E5e2wW6BdDkn_LLFGHOgepmXFPfSoagox-jd02YcjhU3pWqvcEe9FJ173o7w-qZFPfEIh3WI1GJkhp946yO77ENP3x6wIxLSxc6Pt8x8me68l-hWkSw48MFPthtQgozZn_J8W8rvev8D-pBlA7Ncd1uNkyMbrzc5kDgkgMOJUNSd_ZxcNiI"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-secondary text-white p-8 rounded-lg shadow-xl hidden md:block max-w-[240px]">
+<span class="text-xs uppercase tracking-widest font-bold block mb-2 opacity-80">Сезон 2024</span>
+<p class="text-lg font-headline italic leading-snug">Тепло круглый год. Комфорт в каждой детали.</p>
+</div>
+</div>
+</header>
+<!-- Amenity Bento Grid -->
+<section class="mb-24 scroll-reveal">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="thermostat">thermostat</span>
+<h3 class="font-headline text-xl mb-1">Всесезонный нагрев</h3>
+<p class="text-sm text-on-surface-variant">Климат-контроль 24/7</p>
+</div>
+<div class="bg-primary text-white p-8 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed mb-4" data-icon="wifi">wifi</span>
+<h3 class="font-headline text-xl mb-1">Скоростной Wi-Fi</h3>
+<p class="text-sm opacity-70">Для работы и стриминга</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="restaurant">restaurant</span>
+<h3 class="font-headline text-xl mb-1">Сервис кафе</h3>
+<p class="text-sm text-on-surface-variant">Доставка из "The Loft"</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="local_parking">local_parking</span>
+<h3 class="font-headline text-xl mb-1">Парковка</h3>
+<p class="text-sm text-on-surface-variant">Охраняемая VIP-зона</p>
+</div>
+</div>
+</section>
+<!-- Booking Module -->
+<section class="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start scroll-reveal">
+<!-- Left: Gazebo Selection & Gallery -->
+<div class="xl:col-span-2 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(27,28,28,0.06)] border border-outline-variant/10">
+<h2 class="text-3xl mb-8">Выберите пространство</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Gazebo Card 1 -->
+<button class="group text-left focus:outline-none ring-2 ring-primary bg-primary/5 rounded-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="interior of a modern wooden forest pavilion with comfortable seating, large windows, and designer lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOFUBMMO-Gm3WBRztGhzvnetUH5RjMvQdbBq0S82uvWqkZhYY6-uka0vMo83HUydz38l60FpeVegSFKzX5O2Z2sUDBpgnComnOGL7xCpa0Az4zi-5tC5Bs9r2dsjXJ3zMZtraSju0P2hahxTw3zjEliSLzVaoCQzOR39cE88JZ5nih5OlJag8fFV7QqZauMosci9vx9i19vM2srbAUVjc9SMzvCNMHrYErvFL2hmc5819Pr6fEUn_jYB3j2DkE2zFZ64t-HOuPJlE"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-xl font-headline">Беседка #1 "Scandi"</h4>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-widest">Выбрано</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">Минималистичный дизайн, панорамное остекление на лесной массив.</p>
+<div class="flex items-center text-xs gap-3 text-secondary font-bold">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> До 6 чел</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="payments">payments</span> 2500₽/час</span>
+</div>
+</div>
+</button>
+<!-- Gazebo Card 2 -->
+<button class="group text-left focus:outline-none hover:bg-surface-container-low transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-xl overflow-hidden border border-outline-variant/20">
+<div class="aspect-video overflow-hidden grayscale-[30%] group-hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="cozy forest hut with fireplace and rustic furniture surrounded by tall pine trees in evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaSRKDRYK6tiDHXG_ycp-_P2VZRAADrynUTpF_Y3N4FwFCsAF_6KsUs9QJd9tbGPFfMqeYAaMFgXd0tVIqVzxjXcJVNq2gDE23qIVs5LQKUFrXmRaciWYo0T7dh-o4kOQHfJoSOONnmnpeMvDCxN4HhA-BNTMKUbuwBYLfQdbOyXwJG1tVysgNKoYSCte80BBos20AkpHEV_nyPnE0ZAZFNN8f2j-JWXROw5-yhdfglKVbCjYmRYvYG_4KI8Ejsoii1e98o0vOnag"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-xl font-headline">Беседка #2 "Forest"</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">Уютная классика с мягкими креслами и видом на PS Парк.</p>
+<div class="flex items-center text-xs gap-3 text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> До 8 чел</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="payments">payments</span> 3000₽/час</span>
+</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Gallery Row -->
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="min-w-[280px] h-48 rounded-xl overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="close up of warm lantern light on a wooden terrace in a foggy forest at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8aXvIut1kmY7sKLR4Vf6vyhbkUI-IRXmmoSMaxGs87nq5HaPSuLWxiic2KR2KKoJjIPksPc5BDctJ0de58SZKLQiV_p3EtxB7VOD1_QqXqsZRTxYA7pkPEkS7kcjKJbcPCn6Ati5IZyIW2kcd9vQ88_4Inz4sYMoLMOFYD0oNYgQdheNqh0UBcct9ysR9jNPB8Azr3uIi0vOu-FoeXq7NLM-3MIW1d9L3ZabKTvZjvpFvebXCQDAcMWkRFEEphMhtCQpocz0Y06g"/>
+</div>
+<div class="min-w-[280px] h-48 rounded-xl overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="modern eco-friendly architectural structure integrated into nature with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG2nTKlVf8vN5b-FDF_brpV8ZTCEExDLu9oe9ZzG-xwkT5jIaZzvhg4KKklm5S_24AtC_LvPIIOigNFBqGC_a5hJMOuIdPBXIcUnR-wb-PQksYJ0-bBVHr779I-jm5IghKQEnCNvv76Nm07KMRtNlaKV95VAJOw7MCZncvEKBiU7l3_7dzHtpkyxKli8V5h-R-e7kCFc0pCGhYF3BIhaqVUS6QV9CihIiKdORRYqvZ9zCvEekkR9jveGZJIv1Snwp1LacxPBrgrjY"/>
+</div>
+<div class="min-w-[280px] h-48 rounded-xl overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-1000" data-alt="peaceful landscape of a lakeside gazebo at twilight with reflection in still water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5uOVmwgx12rcH959UVSu2kAaGpDIrYdhx99GEReU_NQ3HXeIvOUjJW9V3AEnR-H9-IkqtbOvc2SirZ2MWaw8gnoqlCHCjxTj3AR16525yguRCmqvvjeac0VPLTKiwBt4k-pGbxCqTkXIe2_LTXmdf9HErCCj0gNwWdgqX-zSRe66Bhs1kRmCVdFgRi3YfLVTBhuMPYhBl--HtqLeuRZSbyOSRYCznt6j6-6-tmhb6gatrlWHiRRkpxb9Atlq5N4Tmuu9uCxiSm4A"/>
+</div>
+</div>
+</div>
+<!-- Right: Interactive Calendar -->
+<div class="sticky top-24 bg-white p-8 rounded-xl shadow-[0_32px_64px_rgba(22,52,45,0.08)] border border-primary/5 transition-all duration-300 hover:shadow-[0_48px_80px_rgba(22,52,45,0.12)]">
+<h3 class="text-2xl font-headline mb-6 text-primary">Бронирование</h3>
+<!-- Calendar UI -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+<span id="calendar-month">Ноябрь 2024</span>
+<div class="flex gap-2">
+<button class="material-symbols-outlined text-lg cursor-pointer hover:text-primary transition-all active:scale-90" data-icon="chevron_left" onclick="slideCalendar('left')">chevron_left</button>
+<button class="material-symbols-outlined text-lg cursor-pointer hover:text-primary transition-all active:scale-90" data-icon="chevron_right" onclick="slideCalendar('right')">chevron_right</button>
+</div>
+</div>
+<div class="calendar-slide-container">
+<div class="calendar-grid-transition grid grid-cols-7 gap-1 text-center text-xs" id="calendar-grid">
+<div class="opacity-40 py-2">Пн</div><div class="opacity-40 py-2">Вт</div><div class="opacity-40 py-2">Ср</div><div class="opacity-40 py-2">Чт</div><div class="opacity-40 py-2">Пт</div><div class="text-secondary py-2">Сб</div><div class="text-secondary py-2">Вс</div>
+<div class="py-3 text-on-surface-variant opacity-30">28</div><div class="py-3 text-on-surface-variant opacity-30">29</div><div class="py-3 text-on-surface-variant opacity-30">30</div><div class="py-3 text-on-surface-variant opacity-30">31</div>
+<div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">1</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">2</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">3</div>
+<div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">4</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">5</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">6</div>
+<div class="py-3 bg-primary text-white rounded-sm font-bold shadow-md ring-4 ring-primary-fixed">7</div>
+<div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">8</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">9</div><div class="py-3 hover:bg-surface-container transition-colors cursor-pointer rounded-sm">10</div>
+</div>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="mb-8">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Доступное время</p>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-2 border border-outline-variant text-sm rounded hover:border-primary hover:text-primary transition-all duration-300 hover:scale-[1.02] active:scale-95">10:00 — 12:00</button>
+<button class="py-2 border-2 border-primary bg-primary/5 text-primary text-sm rounded font-bold hover:scale-[1.02] active:scale-95 transition-all">13:00 — 15:00</button>
+<button class="py-2 border border-outline-variant text-sm rounded hover:border-primary hover:text-primary transition-all duration-300 hover:scale-[1.02] active:scale-95">16:00 — 18:00</button>
+<button class="py-2 border border-outline-variant text-sm rounded opacity-40 cursor-not-allowed">19:00 — 21:00</button>
+</div>
+</div>
+<!-- Price & CTA -->
+<div class="pt-6 border-t border-outline-variant/30">
+<div class="flex justify-between items-baseline mb-6">
+<span class="text-on-surface-variant text-sm">Итого к оплате:</span>
+<span class="text-3xl font-headline text-primary">5 000 ₽</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:brightness-110 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] transition-all transform duration-300">
+                    Забронировать беседку
+                </button>
+<p class="text-[10px] text-center mt-4 text-on-surface-variant uppercase tracking-widest">Бесплатная отмена за 24 часа</p>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar Widget -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-center">
+<a class="bg-emerald-900 dark:bg-emerald-800 rounded-full p-4 shadow-[0_12px_40px_rgba(27,28,28,0.25)] hover:scale-110 hover:-translate-y-1 hover:brightness-110 transition-all duration-300 flex items-center gap-3" href="https://t.me">
+<div class="flex flex-col text-right">
+<span class="text-[10px] font-bold text-white uppercase tracking-tighter leading-none">Поддержка</span>
+<span class="text-[8px] text-emerald-100 opacity-70">Отвечаем за 1 минуту</span>
+</div>
+<span class="material-symbols-outlined text-white" data-icon="send">send</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 mt-20">
+<div class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="md:col-span-2">
+<div class="font-serif text-xl mb-4 text-zinc-900 dark:text-zinc-100">Деловой</div>
+<p class="text-zinc-500 text-sm max-w-sm">Современное пространство для бизнеса и жизни. Мы создаем условия для продуктивности в гармонии с природой.</p>
+</div>
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-900 dark:text-zinc-100">Навигация</h5>
+<ul class="space-y-2 text-sm">
+<li><a class="text-zinc-500 hover:text-emerald-700 transition-colors" href="#">Политика конфиденциальности</a></li>
+<li><a class="text-zinc-500 hover:text-emerald-700 transition-colors" href="#">Условия использования</a></li>
+<li><a class="text-emerald-800 dark:text-emerald-400 font-bold" href="#">Правила парка</a></li>
+<li><a class="text-zinc-500 hover:text-emerald-700 transition-colors" href="#">Карта</a></li>
+</ul>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<h5 class="text-xs font-bold uppercase tracking-widest mb-4 text-zinc-900 dark:text-zinc-100">Контакты</h5>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-colors" data-icon="location_on">location_on</span>
+</div>
+</div>
+<div class="text-[10px] text-zinc-500 mt-8">
+                © 2024 Бизнес-парк Деловой. Индустриальная элегантность.
+            </div>
+</div>
+</div>
+</footer>
+<script>
+    // Scroll Reveal Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Simple Calendar Slide Transition
+    function slideCalendar(direction) {
+        const grid = document.getElementById('calendar-grid');
+        const offset = direction === 'left' ? '-20px' : '20px';
+        
+        grid.style.opacity = '0';
+        grid.style.transform = `translateX(${offset})`;
+        
+        setTimeout(() => {
+            grid.style.transform = `translateX(${direction === 'left' ? '20px' : '-20px'})`;
+            setTimeout(() => {
+                grid.style.opacity = '1';
+                grid.style.transform = 'translateX(0)';
+            }, 50);
+        }, 300);
+    }
+</script>
+</body></html>
