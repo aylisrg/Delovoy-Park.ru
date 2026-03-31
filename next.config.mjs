@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/Delovoy-Park.ru',
   images: {
     unoptimized: true,
   },
