@@ -8,51 +8,111 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    @apply bg-white text-gray-900;
+    font-family: 'Manrope', sans-serif;
+    @apply bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
-    @apply font-bold;
+    font-family: 'Newsreader', serif;
   }
 }
 
 @layer components {
+  /* Primary CTA — Forest Green, per DESIGN.md Section 5 */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary
+           font-bold rounded-full shadow-lg hover:-translate-y-0.5 hover:brightness-110
+           active:scale-95 transition-all duration-300;
   }
 
+  /* Secondary CTA — Ghost border style, per DESIGN.md Section 5 */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-xl border-2 border-primary-200 hover:border-primary-400 hover:bg-primary-50 transition-all duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent text-on-surface
+           border border-outline-variant rounded-full hover:bg-surface-container-low
+           hover:border-primary transition-all duration-300;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-white font-semibold rounded-xl hover:bg-gold-dark transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  /* Gaming Accent Button — Neon glow for PS Park, per DESIGN.md Section 5 */
+  .btn-gaming {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-tertiary text-on-tertiary
+           font-bold rounded-full transition-all duration-300;
+    box-shadow: 0 0 10px #5c150b;
+  }
+  .btn-gaming:hover {
+    box-shadow: 0 0 20px #5c150b, 0 0 40px rgba(92, 21, 11, 0.3);
   }
 
+  /* Card — Per DESIGN.md: no dividers, tonal layering, ambient shadow */
   .card {
-    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+    @apply bg-surface-container-lowest rounded-xl overflow-hidden p-6
+           transition-all duration-300;
+    box-shadow: 0 12px 40px rgba(27, 28, 28, 0.06);
+  }
+  .card:hover {
+    @apply bg-surface-container-lowest;
+    box-shadow: 0 20px 50px rgba(27, 28, 28, 0.1);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-display font-bold text-dark;
+    @apply text-4xl md:text-5xl font-headline text-primary;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 mt-3 max-w-2xl;
+    @apply text-lg text-on-surface-variant mt-3 max-w-2xl leading-relaxed;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Input — Per DESIGN.md: surface-container-high bg, bottom-only outline, focus = primary */
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 placeholder-gray-400;
+    @apply w-full p-3 bg-surface-container-high border-0 border-b-2 border-outline/20
+           focus:ring-0 focus:border-primary transition-all duration-200 text-on-surface;
   }
 
-  .sold-out-badge {
-    @apply inline-flex items-center gap-2 bg-red-100 text-red-700 font-bold px-4 py-2 rounded-full text-sm border border-red-200;
+  /* Glass panel for floating nav / modals — Per DESIGN.md: 80% opacity + 20px blur */
+  .glass {
+    @apply bg-surface/80 backdrop-blur-[20px] border border-outline-variant/15;
+  }
+
+  /* Scroll reveal utility — from all Stitch exports */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .scroll-reveal.visible,
+  .scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mask reveal utility — from stitch_/ru_1 */
+  .mask-container {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .mask-item {
+    display: block;
+    opacity: 0;
+    animation: mask-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  /* Interactive element transition — from Stitch exports */
+  .interactive-element {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Cyber glow for PS Park section — from stitch_/ps_ru */
+  .cyber-glow {
+    box-shadow: 0 0 20px rgba(92, 21, 11, 0.15);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Material Symbols config */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
 }
 
@@ -61,11 +121,8 @@
     @apply bg-clip-text text-transparent;
   }
 
-  .bg-hero {
-    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
-  }
-
-  .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
+  /* No-scrollbar utility — from stitch_/ru_3 */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
+
