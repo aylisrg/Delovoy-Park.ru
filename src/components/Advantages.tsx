@@ -55,7 +55,7 @@ export default function Advantages() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Почему мы
           </span>
           <h2 className="section-title">
@@ -78,7 +78,7 @@ export default function Advantages() {
               >
                 {adv.icon}
               </div>
-              <h3 className="font-display font-bold text-dark text-lg mb-3">
+              <h3 className="font-headline font-bold text-on-surface text-lg mb-3">
                 {adv.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">

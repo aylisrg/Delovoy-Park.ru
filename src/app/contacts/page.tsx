@@ -19,9 +19,9 @@ export default function ContactsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 relative overflow-hidden bg-hero text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark/90 to-dark-card/80" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
+      <section className="pt-32 pb-16 relative overflow-hidden bg-inverse-surface text-inverse-on-surface">
+        <div className="absolute inset-0 bg-inverse-surface/85" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="container-custom relative z-10">
           <nav className="flex items-center gap-2 text-white/50 text-sm mb-8">
             <Link href="/" className="hover:text-white transition-colors">
@@ -30,7 +30,7 @@ export default function ContactsPage() {
             <span>/</span>
             <span className="text-white/80">Контакты</span>
           </nav>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             Свяжитесь с нами
           </h1>
           <p className="text-white/70 text-lg max-w-xl leading-relaxed">
@@ -51,14 +51,14 @@ export default function ContactsPage() {
               <div className="space-y-6">
                 {/* Address */}
                 <div className="flex items-start gap-5 p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                  <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-dark text-sm uppercase tracking-wide mb-2">Адрес</div>
+                    <div className="font-semibold text-on-surface text-sm uppercase tracking-wide mb-2">Адрес</div>
                     <p className="text-gray-700">
                       п. Селятино, ул. Заводская, д. 2<br />
                       Наро-Фоминский р-н<br />
@@ -75,8 +75,8 @@ export default function ContactsPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-dark text-sm uppercase tracking-wide mb-2">Телефон</div>
-                    <a href="tel:+79150575011" className="text-primary-600 font-semibold text-lg hover:text-primary-700 transition-colors">
+                    <div className="font-semibold text-on-surface text-sm uppercase tracking-wide mb-2">Телефон</div>
+                    <a href="tel:+79150575011" className="text-primary font-semibold text-lg hover:text-primary transition-colors">
                       +7 (915) 057-50-11
                     </a>
                     <p className="text-gray-500 text-sm mt-1">Пн–Пт, 09:00–18:00</p>
@@ -91,8 +91,8 @@ export default function ContactsPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-dark text-sm uppercase tracking-wide mb-2">Email</div>
-                    <a href="mailto:info@delovoy-park.ru" className="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+                    <div className="font-semibold text-on-surface text-sm uppercase tracking-wide mb-2">Email</div>
+                    <a href="mailto:info@delovoy-park.ru" className="text-primary font-semibold hover:text-primary transition-colors">
                       info@delovoy-park.ru
                     </a>
                     <p className="text-gray-500 text-sm mt-1">Ответим в течение рабочего дня</p>
@@ -107,15 +107,15 @@ export default function ContactsPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-dark text-sm uppercase tracking-wide mb-3">Часы работы администрации</div>
+                    <div className="font-semibold text-on-surface text-sm uppercase tracking-wide mb-3">Часы работы администрации</div>
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Понедельник – Пятница</span>
-                        <span className="font-medium text-dark">09:00 – 18:00</span>
+                        <span className="font-medium text-on-surface">09:00 – 18:00</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Суббота – Воскресенье</span>
-                        <span className="font-medium text-dark">По договорённости</span>
+                        <span className="font-medium text-on-surface">По договорённости</span>
                       </div>
                     </div>
                     <div className="mt-3 flex items-center gap-2 text-green-600 text-sm font-medium">
@@ -173,13 +173,13 @@ export default function ContactsPage() {
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="container-custom text-center">
-          <h2 className="font-display font-bold text-2xl text-dark mb-4">
+          <h2 className="font-headline font-bold text-2xl text-on-surface mb-4">
             Хотите арендовать офис?
           </h2>
           <p className="text-gray-600 mb-6">
             Все помещения заняты, но вы можете записаться в лист ожидания
           </p>
-          <Link href="/waitlist" className="btn-gold">
+          <Link href="/waitlist" className="btn-primary">
             🔔 Войти в лист ожидания
           </Link>
         </div>

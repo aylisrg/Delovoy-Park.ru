@@ -43,7 +43,7 @@ export default function NewsPreview() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-4">
           <div>
-            <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-2">
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-2">
               Новости
             </span>
             <h2 className="section-title">Жизнь в Деловом Парке</h2>
@@ -72,7 +72,7 @@ export default function NewsPreview() {
                 </span>
                 <span className="text-gray-400 text-xs">{item.date}</span>
               </div>
-              <h3 className="font-display font-bold text-dark text-base mb-3 leading-snug">
+              <h3 className="font-headline font-bold text-on-surface text-base mb-3 leading-snug">
                 {item.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -85,7 +85,7 @@ export default function NewsPreview() {
         {/* Newsletter CTA */}
         <div className="mt-12 bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
           <div className="text-3xl mb-3">📱</div>
-          <h3 className="font-display font-bold text-dark text-xl mb-2">
+          <h3 className="font-headline font-bold text-on-surface text-xl mb-2">
             Будьте в курсе событий
           </h3>
           <p className="text-gray-600 text-sm mb-5">

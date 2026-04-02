@@ -6,7 +6,7 @@ export default function Map() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Как нас найти
           </span>
           <h2 className="section-title">Расположение</h2>
@@ -33,9 +33,9 @@ export default function Map() {
             {/* Address */}
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary-fixed rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-5 h-5 text-primary-600"
+                    className="w-5 h-5 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -55,7 +55,7 @@ export default function Map() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-dark mb-1">Адрес</h3>
+                  <h3 className="font-semibold text-on-surface mb-1">Адрес</h3>
                   <p className="text-gray-600 text-sm">
                     п. Селятино, ул. Заводская, д. 2
                     <br />
@@ -69,12 +69,12 @@ export default function Map() {
 
             {/* How to get */}
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-              <h3 className="font-semibold text-dark mb-4">Как добраться</h3>
+              <h3 className="font-semibold text-on-surface mb-4">Как добраться</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="text-xl">🚗</span>
                   <div>
-                    <div className="text-sm font-medium text-dark">На машине</div>
+                    <div className="text-sm font-medium text-on-surface">На машине</div>
                     <div className="text-xs text-gray-500">
                       По Киевскому шоссе, 30 мин от МКАД
                     </div>
@@ -83,7 +83,7 @@ export default function Map() {
                 <div className="flex items-start gap-3">
                   <span className="text-xl">🚂</span>
                   <div>
-                    <div className="text-sm font-medium text-dark">На электричке</div>
+                    <div className="text-sm font-medium text-on-surface">На электричке</div>
                     <div className="text-xs text-gray-500">
                       Ст. Селятино (Киевское направление)
                     </div>
@@ -92,7 +92,7 @@ export default function Map() {
                 <div className="flex items-start gap-3">
                   <span className="text-xl">🚌</span>
                   <div>
-                    <div className="text-sm font-medium text-dark">На автобусе</div>
+                    <div className="text-sm font-medium text-on-surface">На автобусе</div>
                     <div className="text-xs text-gray-500">
                       Маршруты от ст. м. Юго-Западная
                     </div>
@@ -101,7 +101,7 @@ export default function Map() {
                 <div className="flex items-start gap-3">
                   <span className="text-xl">🅿️</span>
                   <div>
-                    <div className="text-sm font-medium text-dark">Парковка</div>
+                    <div className="text-sm font-medium text-on-surface">Парковка</div>
                     <div className="text-xs text-gray-500">
                       Бесплатная охраняемая парковка
                     </div>
