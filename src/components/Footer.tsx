@@ -24,11 +24,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-600 text-white font-display font-bold text-xl shadow-lg">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-600 text-white font-headline font-bold text-xl shadow-lg">
                 ДП
               </div>
               <div>
-                <div className="font-display font-bold text-xl text-white">
+                <div className="font-headline font-bold text-xl text-white">
                   Деловой Парк
                 </div>
                 <div className="text-sm text-white/60">
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-display font-semibold text-white mb-5">
+            <h3 className="font-headline font-semibold text-white mb-5">
               Навигация
             </h3>
             <ul className="space-y-3">
@@ -135,7 +135,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-display font-semibold text-white mb-5">
+            <h3 className="font-headline font-semibold text-white mb-5">
               Услуги
             </h3>
             <ul className="space-y-3">

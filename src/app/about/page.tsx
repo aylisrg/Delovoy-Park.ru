@@ -89,7 +89,7 @@ export default function AboutPage() {
             <span>/</span>
             <span className="text-white/80">О нас</span>
           </nav>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             О бизнес-центре
             <br />
             <span className="text-gradient bg-gradient-to-r from-primary-300 to-accent-300">
@@ -110,7 +110,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-white text-center">
             {keyMetrics.map((metric) => (
               <div key={metric.label}>
-                <div className="text-3xl font-display font-bold text-white mb-1">
+                <div className="text-3xl font-headline font-bold text-white mb-1">
                   {metric.value}
                 </div>
                 <div className="text-white/70 text-xs">{metric.label}</div>
@@ -160,7 +160,7 @@ export default function AboutPage() {
                   className="flex gap-5 items-start"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 font-display font-bold flex items-center justify-center text-sm flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 font-headline font-bold flex items-center justify-center text-sm flex-shrink-0">
                       {m.year}
                     </div>
                     {i < milestones.length - 1 && (
@@ -168,7 +168,7 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div className="pt-2">
-                    <div className="font-display font-bold text-dark text-base">
+                    <div className="font-headline font-bold text-dark text-base">
                       {m.title}
                     </div>
                     <div className="text-gray-500 text-sm mt-1">
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
               >
                 <div className="text-5xl mb-5">{val.emoji}</div>
-                <h3 className="font-display font-bold text-dark text-lg mb-3">
+                <h3 className="font-headline font-bold text-dark text-lg mb-3">
                   {val.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -239,7 +239,7 @@ export default function AboutPage() {
               <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
               SOLD OUT — Все помещения заняты
             </div>
-            <h2 className="font-display font-bold text-4xl mb-4">
+            <h2 className="font-headline font-bold text-4xl mb-4">
               Хотите стать частью Делового Парка?
             </h2>
             <p className="text-white/80 text-lg mb-8">

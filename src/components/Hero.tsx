@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-display font-bold text-white mb-6">
+          <h1 className="font-headline font-bold text-white mb-6">
             <span className="block text-5xl md:text-6xl lg:text-7xl leading-tight">
               Лучший
             </span>
@@ -112,7 +112,7 @@ export default function Hero() {
               { value: "2018", label: "год основания" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-display font-bold text-white mb-1">
+                <div className="text-3xl font-headline font-bold text-white mb-1">
                   {stat.value}
                 </div>
                 <div className="text-white/50 text-sm">{stat.label}</div>

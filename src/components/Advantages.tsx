@@ -78,7 +78,7 @@ export default function Advantages() {
               >
                 {adv.icon}
               </div>
-              <h3 className="font-display font-bold text-dark text-lg mb-3">
+              <h3 className="font-headline font-bold text-dark text-lg mb-3">
                 {adv.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
