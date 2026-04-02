@@ -30,7 +30,7 @@ export default function ContactsPage() {
             <span>/</span>
             <span className="text-white/80">Контакты</span>
           </nav>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             Свяжитесь с нами
           </h1>
           <p className="text-white/70 text-lg max-w-xl leading-relaxed">
@@ -173,7 +173,7 @@ export default function ContactsPage() {
       {/* CTA */}
       <section className="py-16 bg-white">
         <div className="container-custom text-center">
-          <h2 className="font-display font-bold text-2xl text-dark mb-4">
+          <h2 className="font-headline font-bold text-2xl text-dark mb-4">
             Хотите арендовать офис?
           </h2>
           <p className="text-gray-600 mb-6">

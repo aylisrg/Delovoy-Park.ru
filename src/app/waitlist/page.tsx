@@ -68,7 +68,7 @@ export default function WaitlistPage() {
             </div>
           </div>
 
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             Запишитесь в
             <br />
             <span className="text-gradient bg-gradient-to-r from-primary-300 to-accent-300">
@@ -121,7 +121,7 @@ export default function WaitlistPage() {
             <div className="space-y-8">
               {/* Why Wait List */}
               <div className="bg-amber-50 border border-amber-100 rounded-2xl p-8">
-                <h3 className="font-display font-bold text-dark text-xl mb-4">
+                <h3 className="font-headline font-bold text-dark text-xl mb-4">
                   Почему стоит записаться?
                 </h3>
                 <ul className="space-y-3">
@@ -155,7 +155,7 @@ export default function WaitlistPage() {
 
               {/* Contact */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                <h3 className="font-display font-bold text-dark text-xl mb-5">
+                <h3 className="font-headline font-bold text-dark text-xl mb-5">
                   Связаться напрямую
                 </h3>
                 <div className="space-y-4">
@@ -210,7 +210,7 @@ export default function WaitlistPage() {
                   key={i}
                   className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm"
                 >
-                  <h3 className="font-display font-bold text-dark text-base mb-3">
+                  <h3 className="font-headline font-bold text-dark text-base mb-3">
                     {faq.q}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>

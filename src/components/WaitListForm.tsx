@@ -97,7 +97,7 @@ export default function WaitListForm({ compact = false }: WaitListFormProps) {
             />
           </svg>
         </div>
-        <h3 className="font-display font-bold text-2xl text-dark mb-3">
+        <h3 className="font-headline font-bold text-2xl text-dark mb-3">
           Заявка принята! 🎉
         </h3>
         <p className="text-gray-600 mb-6">

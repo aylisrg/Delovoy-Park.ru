@@ -40,12 +40,12 @@ export default function Header() {
             className="flex items-center gap-3 group"
             aria-label="Деловой Парк — на главную"
           >
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-600 text-white font-display font-bold text-lg shadow-lg group-hover:bg-primary-700 transition-colors">
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-600 text-white font-headline font-bold text-lg shadow-lg group-hover:bg-primary-700 transition-colors">
               ДП
             </div>
             <div className="hidden sm:block">
               <div
-                className={`font-display font-bold text-lg leading-tight transition-colors ${
+                className={`font-headline font-bold text-lg leading-tight transition-colors ${
                   isScrolled ? "text-dark" : "text-white"
                 }`}
               >

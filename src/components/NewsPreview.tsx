@@ -72,7 +72,7 @@ export default function NewsPreview() {
                 </span>
                 <span className="text-gray-400 text-xs">{item.date}</span>
               </div>
-              <h3 className="font-display font-bold text-dark text-base mb-3 leading-snug">
+              <h3 className="font-headline font-bold text-dark text-base mb-3 leading-snug">
                 {item.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -85,7 +85,7 @@ export default function NewsPreview() {
         {/* Newsletter CTA */}
         <div className="mt-12 bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
           <div className="text-3xl mb-3">📱</div>
-          <h3 className="font-display font-bold text-dark text-xl mb-2">
+          <h3 className="font-headline font-bold text-dark text-xl mb-2">
             Будьте в курсе событий
           </h3>
           <p className="text-gray-600 text-sm mb-5">
