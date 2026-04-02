@@ -60,7 +60,7 @@ export default function Ratings() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Наши рейтинги
           </span>
           <h2 className="section-title">
@@ -82,13 +82,13 @@ export default function Ratings() {
               className={`card border ${rating.borderColor} ${rating.bgColor} p-8 text-center hover:-translate-y-1 transition-transform duration-300 block`}
             >
               <div className="text-4xl mb-4">{rating.icon}</div>
-              <div className="font-display font-bold text-dark text-lg mb-3">
+              <div className="font-headline font-bold text-on-surface text-lg mb-3">
                 {rating.platform}
               </div>
 
               {/* Score */}
               <div className="flex items-center justify-center gap-2 mb-3">
-                <span className="text-4xl font-display font-bold text-dark">
+                <span className="text-4xl font-headline font-bold text-on-surface">
                   {rating.score}
                 </span>
                 <span className="text-gray-400 text-xl">/5</span>
@@ -106,7 +106,7 @@ export default function Ratings() {
                 отзывов
               </div>
 
-              <div className="mt-4 inline-flex items-center gap-1.5 text-primary-600 text-sm font-medium hover:gap-2.5 transition-all">
+              <div className="mt-4 inline-flex items-center gap-1.5 text-primary text-sm font-medium hover:gap-2.5 transition-all">
                 Читать отзывы
                 <svg
                   className="w-4 h-4"
@@ -127,8 +127,8 @@ export default function Ratings() {
         </div>
 
         {/* Overall Rating */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 text-white text-center">
-          <div className="text-5xl font-display font-bold mb-2">4.8</div>
+        <div className="bg-primary rounded-2xl p-8 text-white text-center">
+          <div className="text-5xl font-headline font-bold mb-2">4.8</div>
           <div className="flex justify-center mb-3">
             <StarRating score={4.8} />
           </div>

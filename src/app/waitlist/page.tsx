@@ -45,8 +45,8 @@ export default function WaitlistPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 relative overflow-hidden bg-hero text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark/95 to-dark-card/85" />
+      <section className="pt-32 pb-16 relative overflow-hidden bg-inverse-surface text-inverse-on-surface">
+        <div className="absolute inset-0 bg-inverse-surface/90" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl" />
         <div className="container-custom relative z-10">
           <nav className="flex items-center gap-2 text-white/50 text-sm mb-8">
@@ -68,10 +68,10 @@ export default function WaitlistPage() {
             </div>
           </div>
 
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             Запишитесь в
             <br />
-            <span className="text-gradient bg-gradient-to-r from-primary-300 to-accent-300">
+            <span className="text-inverse-primary">
               лист ожидания
             </span>
           </h1>
@@ -83,7 +83,7 @@ export default function WaitlistPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-12 bg-primary-50 border-b border-primary-100">
+      <section className="py-12 bg-primary-fixed/20 border-b border-primary-fixed">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
@@ -121,7 +121,7 @@ export default function WaitlistPage() {
             <div className="space-y-8">
               {/* Why Wait List */}
               <div className="bg-amber-50 border border-amber-100 rounded-2xl p-8">
-                <h3 className="font-display font-bold text-dark text-xl mb-4">
+                <h3 className="font-headline font-bold text-on-surface text-xl mb-4">
                   Почему стоит записаться?
                 </h3>
                 <ul className="space-y-3">
@@ -155,35 +155,35 @@ export default function WaitlistPage() {
 
               {/* Contact */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                <h3 className="font-display font-bold text-dark text-xl mb-5">
+                <h3 className="font-headline font-bold text-on-surface text-xl mb-5">
                   Связаться напрямую
                 </h3>
                 <div className="space-y-4">
                   <a
                     href="tel:+79150575011"
-                    className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors"
+                    className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary hover:bg-primary-fixed transition-colors"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-semibold text-dark">+7 (915) 057-50-11</div>
+                      <div className="font-semibold text-on-surface">+7 (915) 057-50-11</div>
                       <div className="text-sm text-gray-500">Пн–Пт, 09:00–18:00</div>
                     </div>
                   </a>
                   <a
                     href="mailto:info@delovoy-park.ru"
-                    className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-colors"
+                    className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary hover:bg-primary-fixed transition-colors"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-semibold text-dark">info@delovoy-park.ru</div>
+                      <div className="font-semibold text-on-surface">info@delovoy-park.ru</div>
                       <div className="text-sm text-gray-500">Ответим в течение дня</div>
                     </div>
                   </a>
@@ -199,7 +199,7 @@ export default function WaitlistPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
                 FAQ
               </span>
               <h2 className="section-title">Частые вопросы</h2>
@@ -210,7 +210,7 @@ export default function WaitlistPage() {
                   key={i}
                   className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm"
                 >
-                  <h3 className="font-display font-bold text-dark text-base mb-3">
+                  <h3 className="font-headline font-bold text-on-surface text-base mb-3">
                     {faq.q}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>

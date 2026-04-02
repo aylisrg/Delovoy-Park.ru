@@ -72,7 +72,7 @@ export default function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="font-display font-bold text-xl text-dark mb-2">
+        <h3 className="font-headline font-bold text-xl text-on-surface mb-2">
           Сообщение отправлено!
         </h3>
         <p className="text-gray-600 text-sm">
