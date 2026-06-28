@@ -184,6 +184,7 @@ export default function RootLayout({
             </Script>
             <noscript>
               <div>
+                {/* eslint-disable-next-line @next/next/no-img-element -- трекинг-пиксель Метрики */}
                 <img
                   src={`https://mc.yandex.ru/watch/${YANDEX_METRIKA_ID}`}
                   style={{ position: "absolute", left: "-9999px" }}

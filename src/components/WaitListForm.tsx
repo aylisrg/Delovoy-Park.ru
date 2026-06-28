@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WAITLIST_ENDPOINT } from "@/lib/forms";
 
 interface FormData {
   name: string;
@@ -49,12 +50,21 @@ export default function WaitListForm({ compact = false }: WaitListFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
     setErrorMessage("");
 
+    // Без настроенного endpoint форму не отправить — честная ошибка с контактами.
+    if (!WAITLIST_ENDPOINT) {
+      setStatus("error");
+      setErrorMessage(
+        "Не удалось отправить заявку. Позвоните по +7 (915) 057-50-11 или напишите на info@delovoy-park.ru"
+      );
+      return;
+    }
+
+    setStatus("loading");
+
     try {
-      // Send via Formspree (replace YOUR_FORM_ID with actual ID)
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch(WAITLIST_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,9 +83,10 @@ export default function WaitListForm({ compact = false }: WaitListFormProps) {
         throw new Error("Ошибка отправки");
       }
     } catch {
-      // Fallback: simulate success for demo
-      setStatus("success");
-      setFormData({ name: "", phone: "", email: "", area: "", type: "" });
+      setStatus("error");
+      setErrorMessage(
+        "Не удалось отправить заявку. Позвоните по +7 (915) 057-50-11 или напишите на info@delovoy-park.ru"
+      );
     }
   };
 

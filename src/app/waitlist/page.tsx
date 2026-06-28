@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { WAITLIST_ENDPOINT } from "@/lib/forms";
 
 export const metadata: Metadata = {
   title: "Лист ожидания — Запись в очередь на аренду офиса",
@@ -228,7 +229,7 @@ export default function WaitlistPage() {
 function WaitListFormExtended() {
   return (
     <form
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action={WAITLIST_ENDPOINT || undefined}
       method="POST"
       className="space-y-4"
     >
