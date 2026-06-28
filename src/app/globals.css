@@ -42,6 +42,19 @@
     box-shadow: 0 0 20px #5c150b, 0 0 40px rgba(92, 21, 11, 0.3);
   }
 
+  /* Gold CTA — used in Header/Hero/contacts (btn-gold) */
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-white
+           font-semibold rounded-full shadow-lg hover:bg-gold-dark hover:-translate-y-0.5
+           hover:shadow-xl transition-all duration-300;
+  }
+
+  /* SOLD OUT badge — used in WaitListForm */
+  .sold-out-badge {
+    @apply inline-flex items-center gap-2 bg-tertiary-container text-on-tertiary-container
+           font-bold px-4 py-2 rounded-full text-sm border border-tertiary/20;
+  }
+
   /* Card — Per DESIGN.md: no dividers, tonal layering, ambient shadow */
   .card {
     @apply bg-surface-container-lowest rounded-xl overflow-hidden p-6
@@ -119,6 +132,11 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
+  }
+
+  /* Hero background — deep forest gradient (in-brand), used by Hero/about/waitlist/contacts */
+  .bg-hero {
+    background: linear-gradient(135deg, #0c1a16 0%, #102a23 50%, #16342d 100%);
   }
 
   /* No-scrollbar utility — from stitch_/ru_3 */

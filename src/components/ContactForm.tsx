@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT_ENDPOINT } from "@/lib/forms";
 
 interface ContactFormData {
   name: string;
@@ -26,10 +27,18 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Без настроенного endpoint форму не отправить — честно показываем ошибку,
+    // а не фейковый «success».
+    if (!CONTACT_ENDPOINT) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
 
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_CONTACT_FORM_ID", {
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,12 +54,10 @@ export default function ContactForm() {
         setStatus("success");
         setFormData({ name: "", phone: "", email: "", message: "" });
       } else {
-        throw new Error("Ошибка");
+        throw new Error("Ошибка отправки");
       }
     } catch {
-      // Demo fallback
-      setStatus("success");
-      setFormData({ name: "", phone: "", email: "", message: "" });
+      setStatus("error");
     }
   };
 
@@ -90,6 +97,19 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {status === "error" && (
+        <div className="rounded-xl bg-error-container text-on-error-container text-sm p-4">
+          Не удалось отправить сообщение. Позвоните нам по{" "}
+          <a href="tel:+79150575011" className="font-semibold underline">
+            +7 (915) 057-50-11
+          </a>{" "}
+          или напишите на{" "}
+          <a href="mailto:info@delovoy-park.ru" className="font-semibold underline">
+            info@delovoy-park.ru
+          </a>
+          .
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label

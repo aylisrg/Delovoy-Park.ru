@@ -24,6 +24,7 @@ export default function Map() {
               height="100%"
               frameBorder="0"
               allowFullScreen
+              loading="lazy"
               title="Карта расположения Делового Парка"
             />
           </div>

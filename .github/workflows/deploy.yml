@@ -1,3 +1,6 @@
+# Сборка статики и публикация на корневой домен delovoy-park.ru.
+# basePath НЕ используется (см. next.config.mjs) — ассеты отдаются с /_next/.
+# Кастомный домен задаётся файлом public/CNAME.
 name: Deploy to GitHub Pages
 
 on:
@@ -37,6 +40,11 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          # Опциональные параметры — задаются в Settings → Secrets and variables → Actions.
+          # Если не заданы, счётчик/формы просто не активируются.
+          NEXT_PUBLIC_YANDEX_METRIKA_ID: ${{ vars.NEXT_PUBLIC_YANDEX_METRIKA_ID }}
+          NEXT_PUBLIC_FORMSPREE_WAITLIST_ID: ${{ vars.NEXT_PUBLIC_FORMSPREE_WAITLIST_ID }}
+          NEXT_PUBLIC_FORMSPREE_CONTACT_ID: ${{ vars.NEXT_PUBLIC_FORMSPREE_CONTACT_ID }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
