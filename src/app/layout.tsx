@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+// ID счётчика Яндекс.Метрики. Задаётся через окружение (NEXT_PUBLIC_YANDEX_METRIKA_ID)
+// и инлайнится в статический билд. Если не задан — счётчик не подключается.
+const YANDEX_METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://delovoy-park.ru"),
@@ -114,6 +119,26 @@ export default function RootLayout({
                 latitude: 55.4825,
                 longitude: 36.9658,
               },
+              image: "https://delovoy-park.ru/images/og-image.jpg",
+              hasMap: "https://yandex.ru/maps/org/delovoy_park/",
+              sameAs: [
+                "https://yandex.ru/maps/org/delovoy_park/",
+                "https://t.me/delovoy_park_selyatino",
+              ],
+              areaServed: [
+                {
+                  "@type": "City",
+                  name: "Селятино",
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Наро-Фоминский городской округ",
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  name: "Московская область",
+                },
+              ],
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
@@ -142,6 +167,32 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+
+        {/* Яндекс.Метрика — грузится после интерактива, не блокирует рендер.
+            Подключается только если задан NEXT_PUBLIC_YANDEX_METRIKA_ID. */}
+        {YANDEX_METRIKA_ID && (
+          <>
+            <Script id="yandex-metrika" strategy="afterInteractive">
+              {`
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                ym(${YANDEX_METRIKA_ID}, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+              `}
+            </Script>
+            <noscript>
+              <div>
+                <img
+                  src={`https://mc.yandex.ru/watch/${YANDEX_METRIKA_ID}`}
+                  style={{ position: "absolute", left: "-9999px" }}
+                  alt=""
+                />
+              </div>
+            </noscript>
+          </>
+        )}
       </body>
     </html>
   );

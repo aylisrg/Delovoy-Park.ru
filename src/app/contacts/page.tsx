@@ -151,6 +151,7 @@ export default function ContactsPage() {
               height="100%"
               frameBorder="0"
               allowFullScreen
+              loading="lazy"
               title="Карта расположения Делового Парка"
             />
           </div>
