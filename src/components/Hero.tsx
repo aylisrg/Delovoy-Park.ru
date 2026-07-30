@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-hero overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-inverse-surface overflow-hidden">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark-light/90 to-dark-card/85" />
+      <div className="absolute inset-0 bg-inverse-surface/90" />
 
       {/* Decorative circles */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-accent-500/15 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-800/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-secondary/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
       {/* Grid pattern */}
       <div
@@ -25,18 +25,18 @@ export default function Hero() {
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-            <span className="text-gold text-lg">★★★★★</span>
+            <span className="text-inverse-primary text-lg">★★★★★</span>
             <span className="text-white/90 text-sm font-medium">
               Бизнес-центр класса 5 звёзд · Селятино, МО
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-display font-bold text-white mb-6">
+          <h1 className="font-headline font-bold text-white mb-6">
             <span className="block text-5xl md:text-6xl lg:text-7xl leading-tight">
               Лучший
             </span>
-            <span className="block text-5xl md:text-6xl lg:text-7xl leading-tight text-gradient bg-gradient-to-r from-primary-300 to-accent-300">
+            <span className="block text-5xl md:text-6xl lg:text-7xl leading-tight text-inverse-primary">
               бизнес-центр
             </span>
             <span className="block text-4xl md:text-5xl lg:text-6xl leading-tight text-white/90">
@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/waitlist" className="btn-gold text-base px-8 py-4">
+            <Link href="/waitlist" className="btn-primary text-base px-8 py-4">
               <svg
                 className="w-5 h-5 mr-2"
                 fill="none"
@@ -112,7 +112,7 @@ export default function Hero() {
               { value: "2018", label: "год основания" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-display font-bold text-white mb-1">
+                <div className="text-3xl font-headline font-bold text-white mb-1">
                   {stat.value}
                 </div>
                 <div className="text-white/50 text-sm">{stat.label}</div>

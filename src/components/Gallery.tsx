@@ -36,7 +36,7 @@ export default function Gallery() {
     <section className="py-20 bg-gray-50" id="gallery">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Галерея
           </span>
           <h2 className="section-title">Пространства Делового Парка</h2>
@@ -49,7 +49,7 @@ export default function Gallery() {
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-800 to-dark-card group cursor-pointer shadow-md hover:shadow-xl transition-shadow"
+              className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary-container group cursor-pointer shadow-md hover:shadow-xl transition-shadow"
             >
               {/* Placeholder gradient with label */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
@@ -70,7 +70,7 @@ export default function Gallery() {
                 {item.label}
               </div>
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/20 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
             </div>
           ))}
         </div>

@@ -78,9 +78,9 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="pt-32 pb-16 bg-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark/90 to-dark-card/80" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
+      <section className="pt-32 pb-16 bg-inverse-surface text-inverse-on-surface relative overflow-hidden">
+        <div className="absolute inset-0 bg-inverse-surface/85" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="container-custom relative z-10">
           <nav className="flex items-center gap-2 text-white/50 text-sm mb-8">
             <Link href="/" className="hover:text-white transition-colors">
@@ -89,10 +89,10 @@ export default function AboutPage() {
             <span>/</span>
             <span className="text-white/80">О нас</span>
           </nav>
-          <h1 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h1 className="font-headline font-bold text-4xl md:text-5xl text-white mb-4">
             О бизнес-центре
             <br />
-            <span className="text-gradient bg-gradient-to-r from-primary-300 to-accent-300">
+            <span className="text-inverse-primary">
               Деловой Парк
             </span>
           </h1>
@@ -105,12 +105,12 @@ export default function AboutPage() {
       </section>
 
       {/* Key Metrics */}
-      <section className="py-12 bg-primary-600">
+      <section className="py-12 bg-primary">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-white text-center">
             {keyMetrics.map((metric) => (
               <div key={metric.label}>
-                <div className="text-3xl font-display font-bold text-white mb-1">
+                <div className="text-3xl font-headline font-bold text-white mb-1">
                   {metric.value}
                 </div>
                 <div className="text-white/70 text-xs">{metric.label}</div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div>
-              <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
                 Наша история
               </span>
               <h2 className="section-title mb-6">
@@ -160,15 +160,15 @@ export default function AboutPage() {
                   className="flex gap-5 items-start"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-primary-100 text-primary-700 font-display font-bold flex items-center justify-center text-sm flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary-fixed text-primary font-headline font-bold flex items-center justify-center text-sm flex-shrink-0">
                       {m.year}
                     </div>
                     {i < milestones.length - 1 && (
-                      <div className="w-0.5 h-10 bg-primary-100 mt-2" />
+                      <div className="w-0.5 h-10 bg-primary-fixed mt-2" />
                     )}
                   </div>
                   <div className="pt-2">
-                    <div className="font-display font-bold text-dark text-base">
+                    <div className="font-headline font-bold text-on-surface text-base">
                       {m.title}
                     </div>
                     <div className="text-gray-500 text-sm mt-1">
@@ -185,7 +185,7 @@ export default function AboutPage() {
       {/* Mission */}
       <section className="py-20 bg-gray-50">
         <div className="container-custom text-center">
-          <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             Миссия
           </span>
           <h2 className="section-title mb-6">
@@ -203,7 +203,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
               Ценности
             </span>
             <h2 className="section-title">Что нами движет</h2>
@@ -213,10 +213,10 @@ export default function AboutPage() {
             {values.map((val, i) => (
               <div
                 key={i}
-                className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
+                className="text-center p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-primary hover:bg-primary-fixed/30 transition-colors"
               >
                 <div className="text-5xl mb-5">{val.emoji}</div>
-                <h3 className="font-display font-bold text-dark text-lg mb-3">
+                <h3 className="font-headline font-bold text-on-surface text-lg mb-3">
                   {val.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -232,14 +232,14 @@ export default function AboutPage() {
       <Gallery />
 
       {/* CTA */}
-      <section className="py-20 bg-primary-600 text-white text-center">
+      <section className="py-20 bg-primary text-on-primary text-center">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 mb-6 text-sm font-medium">
               <span className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
               SOLD OUT — Все помещения заняты
             </div>
-            <h2 className="font-display font-bold text-4xl mb-4">
+            <h2 className="font-headline font-bold text-4xl mb-4">
               Хотите стать частью Делового Парка?
             </h2>
             <p className="text-white/80 text-lg mb-8">
@@ -248,7 +248,7 @@ export default function AboutPage() {
             </p>
             <Link
               href="/waitlist"
-              className="inline-flex items-center gap-2 bg-white text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-colors shadow-xl text-lg"
+              className="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-primary-fixed transition-colors shadow-xl text-lg"
             >
               🔔 Войти в лист ожидания
             </Link>

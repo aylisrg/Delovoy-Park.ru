@@ -14,7 +14,7 @@ export default function SoldOutBanner() {
               <span className="inline-flex w-3 h-3 rounded-full bg-white relative" />
             </div>
             <div>
-              <div className="font-display font-bold text-xl">
+              <div className="font-headline font-bold text-xl">
                 🔴 SOLD OUT — Все помещения заняты
               </div>
               <div className="text-white/80 text-sm">

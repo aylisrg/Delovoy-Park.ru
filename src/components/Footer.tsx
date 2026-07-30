@@ -17,18 +17,18 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-inverse-surface text-white">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-600 text-white font-display font-bold text-xl shadow-lg">
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-on-primary font-headline font-bold text-xl shadow-lg">
                 ДП
               </div>
               <div>
-                <div className="font-display font-bold text-xl text-white">
+                <div className="font-headline font-bold text-xl text-white">
                   Деловой Парк
                 </div>
                 <div className="text-sm text-white/60">
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0"
+                  className="w-5 h-5 text-inverse-primary mt-0.5 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -70,7 +70,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-primary-400 flex-shrink-0"
+                  className="w-5 h-5 text-inverse-primary flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -91,7 +91,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-primary-400 flex-shrink-0"
+                  className="w-5 h-5 text-inverse-primary flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-display font-semibold text-white mb-5">
+            <h3 className="font-headline font-semibold text-white mb-5">
               Навигация
             </h3>
             <ul className="space-y-3">
@@ -125,7 +125,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-white/60 text-sm hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {link.label}
                   </Link>
                 </li>
@@ -135,7 +135,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-display font-semibold text-white mb-5">
+            <h3 className="font-headline font-semibold text-white mb-5">
               Услуги
             </h3>
             <ul className="space-y-3">
@@ -145,7 +145,7 @@ export default function Footer() {
                     href={item.href}
                     className="text-white/60 text-sm hover:text-white transition-colors flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-500 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
                     {item.label}
                   </Link>
                 </li>
@@ -180,7 +180,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Деловой Парк. Все права защищены.
             </p>
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5 text-gold text-sm font-medium">
+              <span className="flex items-center gap-1.5 text-inverse-primary text-sm font-medium">
                 ★★★★★ Бизнес-центр 5 звёзд
               </span>
             </div>

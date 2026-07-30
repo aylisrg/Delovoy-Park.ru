@@ -28,7 +28,7 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
-              <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3">
+              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
                 Лист ожидания
               </span>
               <h2 className="section-title">
